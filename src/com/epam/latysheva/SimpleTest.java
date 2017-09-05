@@ -57,10 +57,10 @@ public class SimpleTest {
          */
         //driver = new FirefoxDriver();
 
-        WebDriver driver = null;
+        driver = null;
         try {
-            //driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), DesiredCapabilities.firefox());
-            driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), DesiredCapabilities.chrome());
+            driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), DesiredCapabilities.firefox());
+            //driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), DesiredCapabilities.chrome());
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -83,7 +83,7 @@ public class SimpleTest {
          */
         inboxPage.waitForElementEnabled(inboxPage.getCOMPOSE_BUTTON());
         ComposePage composePage = inboxPage.clickComposeBtn();
-        composePage.waitForElementEnabled(By.xpath("//*[@data-name=\"send\"]"));
+        //composePage.waitForElementEnabled(By.xpath("//*[@data-name=\"send\"]"));
         Assert.assertTrue(composePage.isComposePage(), CHECK_SEND_BTN_PRESENT_FAILED_MSG);
         /**
          * Fill in  To, Subject, Body fields,
